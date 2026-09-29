@@ -1,7 +1,11 @@
 package com.authService.repository;
 
 import com.authService.entity.UserInfo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CurdRepository<UserInfo, Long> {
-    public UserInfo(String username);
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserInfo, Long> {
+
+    Optional<UserInfo> findByUsername(String username);
 }
